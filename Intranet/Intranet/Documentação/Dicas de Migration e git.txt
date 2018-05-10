@@ -1,0 +1,11 @@
+﻿http://www.macoratti.net/12/09/ef4_mig1.htm
+
+
+Enable-Migrations
+Add-Migration NomeDaMigration
+Update-database
+
+
+change - Comitt all (manda as informações)
+Sync (sinctronicao com servidor)
+Push (envia para o servidor)
