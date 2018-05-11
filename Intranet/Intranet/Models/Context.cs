@@ -9,12 +9,13 @@ namespace Intranet.Models
     {
         public Context()
             : base("name=Context")
-        {
-        }
+        { }
+            public DbSet<Usuario> Usuario { get; set; }
+            
 
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-        }
+    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    {
     }
+}
 }
