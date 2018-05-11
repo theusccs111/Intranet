@@ -163,7 +163,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\IUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -3827,6 +3829,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Registrar.cshtml" />
     <Content Include="Views\Login\RecuperaSenha.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
