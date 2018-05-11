@@ -48,7 +48,7 @@ namespace Intranet.Models
             }
         }
 
-        public string Cifrar(string textoPuro)
+        /*public string Cifrar(string textoPuro)
         {
             string chaveCifragem = "MACVS2014XYW";
             byte[] bytesLimpos = Encoding.Unicode.GetBytes(textoPuro);
@@ -91,6 +91,6 @@ namespace Intranet.Models
                 }
             }
             return textoCifrado;
-        }
+        }*/
     }
 }

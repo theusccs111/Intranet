@@ -161,6 +161,14 @@
     <Compile Include="Migrations\201805111210262_CriacaoUsuario.Designer.cs">
       <DependentUpon>201805111210262_CriacaoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805112000240_Login.cs" />
+    <Compile Include="Migrations\201805112000240_Login.Designer.cs">
+      <DependentUpon>201805112000240_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805112004067_LoginAdmin.cs" />
+    <Compile Include="Migrations\201805112004067_LoginAdmin.Designer.cs">
+      <DependentUpon>201805112004067_LoginAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\IUsuario.cs" />
@@ -3851,6 +3859,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805111210262_CriacaoUsuario.resx">
       <DependentUpon>201805111210262_CriacaoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805112000240_Login.resx">
+      <DependentUpon>201805112000240_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805112004067_LoginAdmin.resx">
+      <DependentUpon>201805112004067_LoginAdmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,5 +1,6 @@
 namespace Intranet.Migrations
 {
+    using Intranet.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,10 @@ namespace Intranet.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Usuario.AddOrUpdate(x => x.id,
+       new Usuario() { id = 1, login = "admin", senha = "451278" }
+       );
         }
     }
 }

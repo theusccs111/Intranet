@@ -20,16 +20,16 @@ namespace Intranet.Controllers
         public ActionResult Index(Usuario u)
         {
             
-                string cifra = dal.Cifrar(u.senha);
-                u.senha = dal.Cifrar(u.senha);
+                /*string cifra = dal.Cifrar(u.senha);
+                u.senha = dal.Cifrar(u.senha);*/
                 if (dal.GetUsuarioPorLoginSenha(u) != null)
                 {
-                    //MessageBox.Show("BemVindo");
+                RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                   // MessageBox.Show("Erro");
-                }
+                RedirectToAction("Registrar", "Login");
+            }
            
             return View();
         }
