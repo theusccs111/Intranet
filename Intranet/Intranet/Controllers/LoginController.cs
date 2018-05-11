@@ -19,19 +19,21 @@ namespace Intranet.Controllers
         [HttpPost]
         public ActionResult Index(Usuario u)
         {
-            
+            if (ModelState.IsValid) //verifica se é válido
+            {
                 /*string cifra = dal.Cifrar(u.senha);
                 u.senha = dal.Cifrar(u.senha);*/
                 if (dal.GetUsuarioPorLoginSenha(u) != null)
                 {
-                RedirectToAction("Index", "Home");
+                    Session["usuarioLogadoID"] = u.id.ToString();
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                RedirectToAction("Registrar", "Login");
+                    return RedirectToAction("Registrar", "Login");
+                }
             }
-           
-            return View();
+            return View(u);
         }
 
         public ActionResult Registrar()
