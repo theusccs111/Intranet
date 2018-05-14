@@ -150,6 +150,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\testeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -169,8 +170,15 @@
     <Compile Include="Migrations\201805112004067_LoginAdmin.Designer.cs">
       <DependentUpon>201805112004067_LoginAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805141258483_editUsuario.cs" />
+    <Compile Include="Migrations\201805141258483_editUsuario.Designer.cs">
+      <DependentUpon>201805141258483_editUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\GrupoAcesso.cs" />
+    <Compile Include="Models\GrupoAcessoDAL.cs" />
+    <Compile Include="Models\IGrupoAcesso.cs" />
     <Compile Include="Models\IUsuario.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioDAL.cs" />
@@ -190,6 +198,7 @@
     <Content Include="Content\materialize.css" />
     <Content Include="Content\morris.css" />
     <Content Include="Content\style.css" />
+    <Content Include="Content\sweetalert.css" />
     <Content Include="Content\waves.css" />
     <Content Include="Documentação\Dicas de Migration e git.txt" />
     <Content Include="Documentação\Template\AdminBSBMaterialDesign-master\css\materialize.css" />
@@ -3829,7 +3838,9 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\waves.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -3857,6 +3868,12 @@
     <Content Include="Views\Login\RecuperaSenha.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Login\Perfil.cshtml" />
+    <Content Include="Views\teste\Create.cshtml" />
+    <Content Include="Views\teste\Delete.cshtml" />
+    <Content Include="Views\teste\Details.cshtml" />
+    <Content Include="Views\teste\Edit.cshtml" />
+    <Content Include="Views\teste\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3884,6 +3901,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805112004067_LoginAdmin.resx">
       <DependentUpon>201805112004067_LoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805141258483_editUsuario.resx">
+      <DependentUpon>201805141258483_editUsuario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

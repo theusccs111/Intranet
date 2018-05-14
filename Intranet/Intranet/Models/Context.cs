@@ -11,10 +11,11 @@ namespace Intranet.Models
             : base("name=Context")
         { }
             public DbSet<Usuario> Usuario { get; set; }
-            
+        public DbSet<GrupoAcesso> GrupoAcesso { get; set; }
 
 
-    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
     }
 }
