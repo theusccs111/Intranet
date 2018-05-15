@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GrupoAcessoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\testeController.cs" />
@@ -173,6 +174,10 @@
     <Compile Include="Migrations\201805141258483_editUsuario.cs" />
     <Compile Include="Migrations\201805141258483_editUsuario.Designer.cs">
       <DependentUpon>201805141258483_editUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805142340365_criacaoGrupoAcesso.cs" />
+    <Compile Include="Migrations\201805142340365_criacaoGrupoAcesso.Designer.cs">
+      <DependentUpon>201805142340365_criacaoGrupoAcesso.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
@@ -3874,6 +3879,10 @@
     <Content Include="Views\teste\Details.cshtml" />
     <Content Include="Views\teste\Edit.cshtml" />
     <Content Include="Views\teste\Index.cshtml" />
+    <Content Include="Views\GrupoAcesso\Index.cshtml" />
+    <Content Include="Views\GrupoAcesso\List.cshtml" />
+    <Content Include="Views\GrupoAcesso\Edit.cshtml" />
+    <Content Include="Views\GrupoAcesso\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3904,6 +3913,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805141258483_editUsuario.resx">
       <DependentUpon>201805141258483_editUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805142340365_criacaoGrupoAcesso.resx">
+      <DependentUpon>201805142340365_criacaoGrupoAcesso.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

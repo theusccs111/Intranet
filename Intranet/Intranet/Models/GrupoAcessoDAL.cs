@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
@@ -23,7 +24,7 @@ namespace Intranet.Models
             
         }
 
-        public GrupoAcesso Find(int codigo)
+        public GrupoAcesso Find(int? codigo)
         {
             using (var context = new Context())
             {
@@ -55,10 +56,15 @@ namespace Intranet.Models
 
             using (var context = new Context())
             {
-                var grupo2 = context.GrupoAcesso.Find(grupo.id);
-                //context.GrupoAcesso.
+                GrupoAcesso grupo2 = context.GrupoAcesso.Find(grupo.id);
+                grupo2.descricao = grupo.descricao;
+                grupo2.isAtivo = grupo.isAtivo;
 
-                //context.SaveChanges();
+                context.SaveChanges();
+
+                
+
+
             }
 
         }
@@ -72,8 +78,10 @@ namespace Intranet.Models
 
             using (var context = new Context())
             {
-                context.GrupoAcesso.Remove(grupo);
+                context.Entry(grupo).State = EntityState.Deleted;
                 context.SaveChanges();
+
+                
             }
 
         }
