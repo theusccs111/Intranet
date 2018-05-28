@@ -19,6 +19,28 @@ namespace Intranet.Models
                 return usuarioSalvo >= 1;
             }
         }
+
+        public void Update(Usuario usuario)
+        {
+            if (usuario == null)
+            {
+                throw new ArgumentNullException("Usuario");
+            }
+
+            using (var context = new Context())
+            {
+                Usuario usuario2 = context.Usuario.Find(usuario.id);
+                usuario2.login = usuario.login;
+                usuario2.senha = usuario.senha;
+                usuario2.nome = usuario.nome;
+                usuario2.email = usuario.email;
+                usuario2.telefone = usuario.telefone;
+
+                context.SaveChanges();
+            }
+
+        }
+
         public Usuario GetUsuarioPorCodigo(int codigo)
         {
             using (var context = new Context())

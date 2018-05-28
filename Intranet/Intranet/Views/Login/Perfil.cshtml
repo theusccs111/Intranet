@@ -9,9 +9,9 @@
 <link href="~/Content/sweetalert.css" rel="stylesheet">
 <section class="content">
     <div class="container-fluid">
-        <div class="block-header">
-            <h2>FORM EXAMPLES</h2>
-        </div>
+        @*<div class="block-header">
+                <h2>FORM EXAMPLES</h2>
+            </div>*@
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
@@ -34,48 +34,52 @@
                     </div>
                     <div class="body">
                         @using (Html.BeginForm("Perfil", "Login", FormMethod.Post, new { id = "sign_in" }))
-                    {
-                        <label for="nome">@Html.DisplayNameFor(model => model.nome)</label>
-                        <div class="form-group">
-                            <div class="form-line">
-                                <input type="text" id="nome" class="form-control" value="@Html.DisplayFor(model => model.nome)">
+                        {
+
+                            @Html.AntiForgeryToken()
+
+                            @Html.HiddenFor(model => model.id)
+                            <label for="nome">@Html.DisplayNameFor(model => model.nome)</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="nome" name="nome" class="form-control" value="@Html.DisplayFor(model => model.nome)">
+                                </div>
                             </div>
-                        </div>
-                        <label for="login">@Html.DisplayNameFor(model => model.login)</label>
-                        <div class="form-group">
-                            <div class="form-line">
-                                <input type="text" id="login" class="form-control" value="@Html.DisplayFor(model => model.login)">
+                            <label for="login">@Html.DisplayNameFor(model => model.login)</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="login" name="login" class="form-control" value="@Html.DisplayFor(model => model.login)">
+                                </div>
                             </div>
-                        </div>
-                        <label for="email_address">@Html.DisplayNameFor(model => model.email)</label>
-                        <div class="form-group">
-                            <div class="form-line">
-                                <input type="text" id="email_address" class="form-control" value="@Html.DisplayFor(model => model.email)">
+                            <label for="email_address">@Html.DisplayNameFor(model => model.email)</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="email_address" name="email" class="form-control" value="@Html.DisplayFor(model => model.email)">
+                                </div>
                             </div>
-                        </div>
-                        <label for="password">@Html.DisplayNameFor(model => model.senha)</label>
-                        <div class="form-group">
-                            <div class="form-line">
-                                <input type="password" id="password" class="form-control" value="@Html.DisplayFor(model => model.senha)">
+                            <label for="password">@Html.DisplayNameFor(model => model.senha)</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="password" id="password" name="senha" class="form-control" value="@Html.DisplayFor(model => model.senha)">
+                                </div>
                             </div>
-                        </div>
-                        <label for="telefone">@Html.DisplayNameFor(model => model.telefone)</label>
-                        <div class="form-group">
-                            <div class="form-line">
-                                <input type="text" id="telefone" class="form-control" value="@Html.DisplayFor(model => model.telefone)">
+                            <label for="telefone">@Html.DisplayNameFor(model => model.telefone)</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="telefone" name="telefone" class="form-control" value="@Html.DisplayFor(model => model.telefone)">
+                                </div>
                             </div>
-                        </div>
-                        @*<input type="checkbox" id="remember_me" class="filled-in">
-                        <label for="remember_me">Remember Me</label>*@
-                        <br>
-                        <button type="button" class="btn btn-primary m-t-15 waves-effect">LOGIN</button>
-                }
+                            @*<input type="checkbox" id="remember_me" class="filled-in">
+                                <label for="remember_me">Remember Me</label>*@
+                            <br>
+                            <button type="submit" class="btn btn-primary m-t-15 waves-effect">Salvar</button>
+                        }
                     </div>
                 </div>
             </div>
         </div>
 
 
-       
+
     </div>
 </section>

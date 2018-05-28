@@ -60,5 +60,19 @@ namespace Intranet.Controllers
             }
             return View(usuario);
         }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Perfil(Usuario usuario)
+        {
+            if (ModelState.IsValid)
+            {
+                dal.Update(usuario);
+                return RedirectToAction("Perfil");
+            }
+            return View(usuario);
+        }
     }
 }
