@@ -35,6 +35,10 @@ namespace Intranet.Migrations
             context.GrupoAcesso.AddOrUpdate(x => x.id,
        new GrupoAcesso() { id = 1, descricao = "administrador", isAtivo = true }
        );
+
+            context.GrupoAcesso.AddOrUpdate(x => x.id,
+       new GrupoAcesso() { id = 2, descricao = "cta", isAtivo = false }
+       );
         }
     }
 }

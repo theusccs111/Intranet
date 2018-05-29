@@ -15,6 +15,7 @@ namespace Intranet.Controllers
         // GET: GrupoAcesso
         public ActionResult Index()
         {
+
             return View();
         }
         [HttpPost]
@@ -27,20 +28,27 @@ namespace Intranet.Controllers
             return View(u);
         }
 
+        public ActionResult ListGrupos()
+        {
+            var list = dal.All();
+            return PartialView("_List",list);
+        }
+
         public ActionResult AjaxHandler(jQueryDataTableParamModel param)
         {
+            var allGrupos = dal.All();
+
+            var result = from c in allGrupos select c;
+                        // select new[] { c.id,c.descricao,c.isAtivo };
+
             return Json(new
             {
                 sEcho = param.sEcho,
-                iTotalRecords = 97,
-                iTotalDisplayRecords = 3,
-                aaData = new List<string[]>() {
-                    new string[] {"1", "Microsoft", "Redmond", "USA"},
-                    new string[] {"2", "Google", "Mountain View", "USA"},
-                    new string[] {"3", "Gowi", "Pancevo", "Serbia"}
-                    }
+                iTotalRecords = allGrupos.Count(),
+                iTotalDisplayRecords = allGrupos.Count(),
+                aaData = result
             },
-            JsonRequestBehavior.AllowGet);
+                            JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Edit(int? id)
