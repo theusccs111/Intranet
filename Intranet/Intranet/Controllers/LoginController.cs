@@ -51,7 +51,7 @@ namespace Intranet.Controllers
         {
             if (Session["usuarioLogadoID"] == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return RedirectToAction("Index", "Login");
             }
             Usuario usuario = dal.GetUsuarioPorCodigo(Convert.ToInt32(Session["usuarioLogadoID"].ToString()));
             if (usuario == null)

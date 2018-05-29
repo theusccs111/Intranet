@@ -34,6 +34,22 @@ namespace Intranet.Controllers
             return PartialView("_List",list);
         }
 
+        [HttpPost]
+        public JsonResult Check(int id)
+        {
+            GrupoAcesso g = dal.Find(id);
+            if (g.isAtivo)
+            {
+                g.isAtivo = false;
+            }
+            else
+            {
+                g.isAtivo = true;
+            }
+            dal.Update(g);
+            return Json(new { success = true });
+        }
+
         public ActionResult AjaxHandler(jQueryDataTableParamModel param)
         {
             var allGrupos = dal.All();
