@@ -31,6 +31,10 @@ namespace Intranet.Migrations
             context.Usuario.AddOrUpdate(x => x.id,
        new Usuario() { id = 1, login = "admin", senha = "451278" }
        );
+
+            context.GrupoAcesso.AddOrUpdate(x => x.id,
+       new GrupoAcesso() { id = 1, descricao = "administrador", isAtivo = true }
+       );
         }
     }
 }

@@ -27,6 +27,21 @@ namespace Intranet.Controllers
             return View(u);
         }
 
+        public ActionResult AjaxHandler(jQueryDataTableParamModel param)
+        {
+            return Json(new
+            {
+                sEcho = param.sEcho,
+                iTotalRecords = 97,
+                iTotalDisplayRecords = 3,
+                aaData = new List<string[]>() {
+                    new string[] {"1", "Microsoft", "Redmond", "USA"},
+                    new string[] {"2", "Google", "Mountain View", "USA"},
+                    new string[] {"3", "Gowi", "Pancevo", "Serbia"}
+                    }
+            },
+            JsonRequestBehavior.AllowGet);
+        }
 
         public ActionResult Edit(int? id)
         {

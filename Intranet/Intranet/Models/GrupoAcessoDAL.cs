@@ -41,6 +41,7 @@ namespace Intranet.Models
 
             using (var context = new Context())
             {
+                grupo.isAtivo = true;
                 context.GrupoAcesso.Add(grupo);
                 context.SaveChanges();
             }
