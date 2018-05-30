@@ -50,22 +50,7 @@ namespace Intranet.Controllers
             return Json(new { success = true });
         }
 
-        public ActionResult AjaxHandler(jQueryDataTableParamModel param)
-        {
-            var allGrupos = dal.All();
-
-            var result = from c in allGrupos select c;
-                        // select new[] { c.id,c.descricao,c.isAtivo };
-
-            return Json(new
-            {
-                sEcho = param.sEcho,
-                iTotalRecords = allGrupos.Count(),
-                iTotalDisplayRecords = allGrupos.Count(),
-                aaData = result
-            },
-                            JsonRequestBehavior.AllowGet);
-        }
+        
 
         public ActionResult Edit(int? id)
         {

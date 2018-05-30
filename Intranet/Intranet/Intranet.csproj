@@ -189,7 +189,6 @@
     <Compile Include="Models\GrupoAcessoDAL.cs" />
     <Compile Include="Models\IGrupoAcesso.cs" />
     <Compile Include="Models\IUsuario.cs" />
-    <Compile Include="Models\jQueryDataTableParamModel.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
