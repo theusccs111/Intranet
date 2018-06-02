@@ -38,16 +38,6 @@
                                     <th></th>
                                 </tr>
                             </thead>
-                            @*<tfoot>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Descrição</th>
-                                        <th>Ativo</th>
-                                        <th></th>
-
-                                    </tr>
-                                </tfoot>*@
-
                             <tbody>
 
                                 @foreach (var item in Model)
@@ -67,7 +57,12 @@
                                         </td>
 
                                         <td>
-                                            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                                           
+                                            <button type="button" class="btn bg-black waves-effect waves-light" onclick="showCancelMessage(@item.id);">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                            
+                                            @*data-type="cancel"*@
                                         </td>
                                     </tr>
                                 }
@@ -92,16 +87,33 @@
                 var data = { id: id };
 
                     $.post(url, data).done(function (data) {
-                        alert(data.success);
+                        //alert(data.success);
+                    }).fail(msgErroAjax).always(function () {
+
+
+                    });
+    }
+
+
+
+    function DeleteItem(id) {
+                var url = "@Url.Action("DeleteGrupo", "GrupoAcesso")";
+
+                var data = { id: id };
+
+                    $.post(url, data).done(function (data) {
+                        //alert(data.success);
                     }).fail(msgErroAjax).always(function () {
 
 
                     });
                 }
 
+
                 function msgErroAjax(err) {
                     console.log(err.responseText);
                 }
 
-
+    
 </script>
+

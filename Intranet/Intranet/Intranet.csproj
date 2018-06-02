@@ -205,6 +205,10 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\dataTables.bootstrap.css" />
+    <Content Include="Content\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\Images\user-img-background.jpg" />
     <Content Include="Content\Images\user.png" />
     <Content Include="Content\materialize.css" />
@@ -3594,6 +3598,7 @@
     <Content Include="Scripts\autosize.js" />
     <Content Include="Scripts\basic-form-elements.js" />
     <Content Include="Scripts\bootstrap-material-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-notify.js" />
     <Content Include="Scripts\bootstrap-select.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -3821,8 +3826,19 @@
     <Content Include="Documentação\Template\AdminBSBMaterialDesign-master\scss\_tooltippopovers.scss" />
     <Content Include="Documentação\Template\AdminBSBMaterialDesign-master\scss\_variables.scss" />
     <Content Include="Documentação\Template\AdminBSBMaterialDesign-master\scss\_waveseffect.scss" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\forgot-password.js" />
+    <Content Include="Scripts\FuncoesCriadas.js" />
     <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -3861,6 +3877,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sign-in.js" />
     <Content Include="Scripts\sign-up.js" />
+    <Content Include="Scripts\sweetalert.min.js" />
     <Content Include="Scripts\umd\popper-utils.js" />
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />

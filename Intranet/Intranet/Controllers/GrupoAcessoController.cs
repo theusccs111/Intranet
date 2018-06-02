@@ -109,5 +109,13 @@ namespace Intranet.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public JsonResult DeleteGrupo(int id)
+        {
+            GrupoAcesso g = dal.Find(id);
+            dal.Delete(g);
+            return Json(new { success = true });
+        }
+
     }
 }
