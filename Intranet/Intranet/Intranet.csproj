@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\GrupoAcessoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -183,8 +184,13 @@
     <Compile Include="Migrations\201805290249502_reseedGrupo.Designer.cs">
       <DependentUpon>201805290249502_reseedGrupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806022015304_Produto.cs" />
+    <Compile Include="Migrations\201806022015304_Produto.Designer.cs">
+      <DependentUpon>201806022015304_Produto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\GrupoAcesso.cs" />
     <Compile Include="Models\GrupoAcessoDAL.cs" />
     <Compile Include="Models\IGrupoAcesso.cs" />
@@ -3908,6 +3914,7 @@
     <Content Include="Views\GrupoAcesso\Edit.cshtml" />
     <Content Include="Views\GrupoAcesso\Delete.cshtml" />
     <Content Include="Views\GrupoAcesso\_List.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3944,6 +3951,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805290249502_reseedGrupo.resx">
       <DependentUpon>201805290249502_reseedGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806022015304_Produto.resx">
+      <DependentUpon>201806022015304_Produto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
