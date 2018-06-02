@@ -80,6 +80,7 @@ namespace Intranet.Models
             using (var context = new Context())
             {
                 context.Entry(grupo).State = EntityState.Deleted;
+                //context.GrupoAcesso.Remove(grupo);
                 context.SaveChanges();
 
                 
