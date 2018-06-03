@@ -12,7 +12,7 @@ namespace Intranet.Models
         [Key]
         public int id { get; set; }
 
-
+        [Required]
         public string descricao { get; set; }
 
         [DisplayName("Ativo?")]

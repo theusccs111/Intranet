@@ -31,6 +31,11 @@
     <!-- Themes Css -->
     <link href="~/Content/all-themes.css" rel="stylesheet">
 
+
+
+    <!-- Multi Select Css -->
+    <link href="~/Content/multi-select.css" rel="stylesheet">
+
 </head>
 <body class="theme-black">
 
@@ -319,14 +324,19 @@
                                     <span>Usuários</span>
                                 </a>
                                 <ul class="ml-menu">
-                                    <li class="active">
+                                    <li>
                                         <a href="@Url.Action("Perfil","Login")">
                                             <span>Perfil</span>
                                         </a>
                                     </li>
-                                    <li class="active">
+                                    <li>
                                         <a href="@Url.Action("Index","GrupoAcesso")">
                                             <span>Grupo de Acesso</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("AtribuirGrupos","GrupoAcesso")">
+                                            <span>Atribuir Acesso</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -508,6 +518,8 @@
     <!-- Slimscroll Plugin Js -->
     <script src="~/Scripts/jquery.slimscroll.js"></script>
 
+    <!-- Multi Select Plugin Js -->
+    <script src="~/Scripts/jquery.multi-select.js"></script>
     <!-- Waves Effect Plugin Js -->
     <script src="~/Scripts/waves.js"></script>
 
@@ -550,7 +562,9 @@
     <!-- Demo Js -->
     <script src="~/Scripts/demo.js"></script>
     <script src="~/Scripts/basic-form-elements.js"></script>
+    <script src="~/Scripts/advanced-form-elements.js"></script>
     <script src="~/Scripts/jquery-datatable.js"></script>
+
 
 
 
