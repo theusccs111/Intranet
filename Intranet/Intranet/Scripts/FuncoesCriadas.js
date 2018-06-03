@@ -59,3 +59,19 @@ function showCancelMessage(id) {
         }
     });
 }
+
+
+$('#selectGrupos').multiselect({
+        includeSelectAllOption: true
+    });
+
+
+$('#aparecer').click(function () {
+    console.log("veio pra ca");
+        var selected = $("#selectGrupos option:selected");
+        var message = "";
+        selected.each(function () {
+            message += $(this).text() + " " + $(this).val() + "\n";
+        });
+        alert(message);
+    });

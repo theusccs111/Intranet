@@ -84,30 +84,6 @@ namespace Intranet.Controllers
             return View(dal.All());
         }
 
-        // GET: teste/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            GrupoAcesso grupo = dal.Find(id);
-            if (grupo == null)
-            {
-                return HttpNotFound();
-            }
-            return View(grupo);
-        }
-
-        // POST: teste/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            GrupoAcesso grupo = dal.Find(id);
-            dal.Delete(grupo);
-            return RedirectToAction("Index");
-        }
 
         [HttpPost]
         public JsonResult DeleteGrupo(int id)
@@ -115,6 +91,15 @@ namespace Intranet.Controllers
             GrupoAcesso g = dal.Find(id);
             dal.Delete(g);
             return Json(new { success = true });
+        }
+
+
+        public ActionResult AtribuirGrupos()
+        {
+            Context c = new Context();
+            ViewBag.ListaGrupos = (from d in c.GrupoAcesso
+                               select d.descricao).Distinct();
+            return View();
         }
 
     }

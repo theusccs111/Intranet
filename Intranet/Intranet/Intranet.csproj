@@ -184,6 +184,10 @@
     <Compile Include="Migrations\201805290249502_reseedGrupo.Designer.cs">
       <DependentUpon>201805290249502_reseedGrupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806022251302_mexiGrupo.cs" />
+    <Compile Include="Migrations\201806022251302_mexiGrupo.Designer.cs">
+      <DependentUpon>201806022251302_mexiGrupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201806022015304_Produto.cs" />
     <Compile Include="Migrations\201806022015304_Produto.Designer.cs">
       <DependentUpon>201806022015304_Produto.cs</DependentUpon>
@@ -221,8 +225,10 @@
     <Content Include="Content\Images\user.png" />
     <Content Include="Content\materialize.css" />
     <Content Include="Content\morris.css" />
+    <Content Include="Content\multi-select.css" />
     <Content Include="Content\style.css" />
     <Content Include="Content\sweetalert.css" />
+    <Content Include="Content\Images\switch.png" />
     <Content Include="Content\waitMe.css" />
     <Content Include="Content\waves.css" />
     <Content Include="Documentação\Dicas de Migration e git.txt" />
@@ -3603,6 +3609,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\admin.js" />
+    <Content Include="Scripts\advanced-form-elements.js" />
     <Content Include="Scripts\autosize.js" />
     <Content Include="Scripts\basic-form-elements.js" />
     <Content Include="Scripts\bootstrap-material-datetimepicker.js" />
@@ -3862,6 +3869,7 @@
     <Content Include="Scripts\jquery.flot.resize.js" />
     <Content Include="Scripts\jquery.flot.time.js" />
     <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.multi-select.js" />
     <Content Include="Scripts\jquery.slimscroll.js" />
     <Content Include="Scripts\jquery.sparkline.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -3971,9 +3979,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805290249502_reseedGrupo.resx">
       <DependentUpon>201805290249502_reseedGrupo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806022015304_Produto.resx">
-      <DependentUpon>201806022015304_Produto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
