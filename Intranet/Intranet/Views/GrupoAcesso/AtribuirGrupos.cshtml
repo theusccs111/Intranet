@@ -4,52 +4,40 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>AtribuirGrupos</h2>
-
 <section class="content">
+    <!-- Inline Layout -->
     <div class="container-fluid">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <div class="card">
-                <div class="header">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            Grupo de Acesso
+                        </h2>
+                        <div class="body">
 
-                </div>
-                <div class="body">
-                    <!-- Multi Select -->
-                    <div class="row clearfix">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="card">
-                                <div class="header">
-                                    <h2>
-                                        MULTI-SELECT
-                                        <small>Taken from <a href="https://github.com/lou/multi-select/" target="_blank">github.com/lou/multi-select</a></small>
-                                    </h2>
-                                    <ul class="header-dropdown m-r--5">
-                                        <li class="dropdown">
-                                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                                <i class="material-icons">more_vert</i>
-                                            </a>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li><a href="javascript:void(0);">Action</a></li>
-                                                <li><a href="javascript:void(0);">Another action</a></li>
-                                                <li><a href="javascript:void(0);">Something else here</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="body">
-                                    @Html.DropDownList("Grupos", new SelectList(ViewBag.ListaGrupos), "selecione", new { id = "selectGrupos" ,@multiple = "multiple" })
+                            <select id="optgroup" multiple="multiple" class="multiSelect ms">
+                                @if (ViewBag.ListaGrupos != null)
+                                {
+                                    foreach (var item in ViewBag.ListaGrupos)
+                                    {
+                                        if (item.Text != null)
+                                        {
+                                            <option value="@item.Value">
+                                                @item.Text
+                                            </option>
+                                        }
+                                    }
+                                }
+                            </select>
 
-                                    <button id="aparecer">aparecer</button>
-
-                                </div>
-                            </div>
+                            <button id="aparecer">alerta</button>
                         </div>
                     </div>
-                    <!-- #END# Multi Select -->
-
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 

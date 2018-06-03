@@ -3,7 +3,7 @@ namespace Intranet.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Produto : DbMigration
+    public partial class mudanca : DbMigration
     {
         public override void Up()
         {
@@ -22,10 +22,12 @@ namespace Intranet.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
+            AlterColumn("dbo.GrupoAcessoes", "descricao", c => c.String(nullable: false));
         }
         
         public override void Down()
         {
+            AlterColumn("dbo.GrupoAcessoes", "descricao", c => c.String());
             DropTable("dbo.Produtoes");
         }
     }

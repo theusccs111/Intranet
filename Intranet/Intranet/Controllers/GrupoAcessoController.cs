@@ -97,9 +97,15 @@ namespace Intranet.Controllers
 
         public ActionResult AtribuirGrupos()
         {
-            Context c = new Context();
-            ViewBag.ListaGrupos = (from d in c.GrupoAcesso
-                               select d.descricao).Distinct();
+            using (Context c = new Context())
+            {
+                var result = (from g in c.GrupoAcesso select g).ToList();
+                if(result != null)
+                {
+                    ViewBag.ListaGrupos = result.Select(x => new SelectListItem { Text = x.descricao, Value = x.id.ToString() });
+                }
+            }
+
             return View();
         }
 

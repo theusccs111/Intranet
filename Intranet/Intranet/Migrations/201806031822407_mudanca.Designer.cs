@@ -7,13 +7,13 @@ namespace Intranet.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class mexiGrupo : IMigrationMetadata
+    public sealed partial class mudanca : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(mexiGrupo));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(mudanca));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806022251302_mexiGrupo"; }
+            get { return "201806031822407_mudanca"; }
         }
         
         string IMigrationMetadata.Source

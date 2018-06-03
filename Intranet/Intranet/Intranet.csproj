@@ -184,13 +184,9 @@
     <Compile Include="Migrations\201805290249502_reseedGrupo.Designer.cs">
       <DependentUpon>201805290249502_reseedGrupo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806022251302_mexiGrupo.cs" />
-    <Compile Include="Migrations\201806022251302_mexiGrupo.Designer.cs">
-      <DependentUpon>201806022251302_mexiGrupo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806022015304_Produto.cs" />
-    <Compile Include="Migrations\201806022015304_Produto.Designer.cs">
-      <DependentUpon>201806022015304_Produto.cs</DependentUpon>
+    <Compile Include="Migrations\201806031822407_mudanca.cs" />
+    <Compile Include="Migrations\201806031822407_mudanca.Designer.cs">
+      <DependentUpon>201806031822407_mudanca.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
@@ -3943,6 +3939,7 @@
     <Content Include="Views\GrupoAcesso\_List.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Views\Produto\_ListProduto.cshtml" />
+    <Content Include="Views\GrupoAcesso\AtribuirGrupos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3979,6 +3976,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805290249502_reseedGrupo.resx">
       <DependentUpon>201805290249502_reseedGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806031822407_mudanca.resx">
+      <DependentUpon>201806031822407_mudanca.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
