@@ -16,146 +16,150 @@
                 <div class="body">
 
                     @using (Html.BeginForm("Index", "Produto", FormMethod.Post, new { id = "create_produto" }))
-    {
-                @Html.AntiForgeryToken()
+                    {
+                        @Html.AntiForgeryToken()
 
 
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <label for="email_address">Descrição do Produto</label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input type="text" id="DescProduto" name="DescProduto" class="form-control" placeholder="Informe a descrição do Produto">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <label for="email_address">Descrição do Produto</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="text" id="DescProduto" name="DescProduto" class="form-control" placeholder="Informe a descrição do Produto">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <label for="password">Peso</label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input type="number" id="Peso" name="Peso" class="form-control" placeholder="Informe o Peso">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <label for="password">Peso</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="number" id="Peso" name="Peso" class="form-control" placeholder="Informe o Peso">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <label for="password">Valor</label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input type="number" id="Valor" name="Valor" class="form-control" placeholder="Informe o Valor">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <label for="password">Valor</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="number" id="Valor" name="Valor" class="form-control" placeholder="Informe o Valor">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <label for="password">Quantidade</label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input type="number" id="Quantidade" name="Quantidade" class="form-control" placeholder="Informe a Quantidade">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <label for="password">Quantidade</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="number" id="Quantidade" name="Quantidade" class="form-control" placeholder="Informe a Quantidade">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <label for="password">Data da Compra</label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input type="datetime" id="DataCompra" name="DataCompra" class="form-control" placeholder="Informe a Data da Compra">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <label for="password">Data da Compra</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="datetime" id="DataCompra" name="DataCompra" class="form-control" placeholder="Informe a Data da Compra">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <label for="password">Data de Vencimento</label>
-                    <div class="form-group">
-                        <div class="form-line">
-                            <input type="datetime" id="DataVencimento" name="DataVencimento" class="form-control" placeholder="Informe a Data de Vencimento">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <label for="password">Data de Vencimento</label>
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <input type="datetime" id="DataVencimento" name="DataVencimento" class="form-control" placeholder="Informe a Data de Vencimento">
+                                </div>
+                            </div>
                         </div>
-                    </div>
+
+
+
+                        @*
+                            <div class="form-horizontal">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.DescProduto, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        <div class="form-line">
+                                            @Html.EditorFor(model => model.DescProduto, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.DescProduto, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Peso, htmlAttributes: new { @class = "control-label col-md-1" })
+                                    <div class="col-md-3">
+                                        <div class="form-line">
+                                            @Html.EditorFor(model => model.Peso, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Peso, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @Html.LabelFor(model => model.Valor, htmlAttributes: new { @class = "control-label col-md-1" })
+                                    <div class="col-md-3">
+                                        <div class="form-line">
+                                            @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @Html.LabelFor(model => model.Quantidade, htmlAttributes: new { @class = "control-label col-md-1" })
+                                    <div class="col-md-3">
+                                        <div class="form-line">
+                                            @Html.EditorFor(model => model.Quantidade, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Quantidade, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.DataCompra, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-4">
+                                        <div class="form-line">
+                                            @Html.EditorFor(model => model.DataCompra, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.DataCompra, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    @Html.LabelFor(model => model.DataVencimento, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-4">
+                                        <div class="form-line">
+                                            @Html.EditorFor(model => model.DataVencimento, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.DataVencimento, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.isAtivo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                                @Html.EditorFor(model => model.isAtivo)
+                                                @Html.ValidationMessageFor(model => model.isAtivo, "", new { @class = "text-danger" })
+                                       </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Create" class="btn btn-default" />
+                                    </div>
+                                </div>
+                            </div>
+                        *@
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-primary m-t-15 waves-effect">CRIAR</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    }
+
+
                 </div>
-
-
-
-                @*
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.DescProduto, htmlAttributes: new { @class = "control-label col-md-3" })
-            <div class="col-md-9">
-                <div class="form-line">
-                    @Html.EditorFor(model => model.DescProduto, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.DescProduto, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Peso, htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-3">
-                <div class="form-line">
-                    @Html.EditorFor(model => model.Peso, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Peso, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            @Html.LabelFor(model => model.Valor, htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-3">
-                <div class="form-line">
-                    @Html.EditorFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Valor, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            @Html.LabelFor(model => model.Quantidade, htmlAttributes: new { @class = "control-label col-md-1" })
-            <div class="col-md-3">
-                <div class="form-line">
-                    @Html.EditorFor(model => model.Quantidade, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Quantidade, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DataCompra, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                <div class="form-line">
-                    @Html.EditorFor(model => model.DataCompra, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.DataCompra, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            @Html.LabelFor(model => model.DataVencimento, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-4">
-                <div class="form-line">
-                    @Html.EditorFor(model => model.DataVencimento, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.DataVencimento, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.isAtivo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                        @Html.EditorFor(model => model.isAtivo)
-                        @Html.ValidationMessageFor(model => model.isAtivo, "", new { @class = "text-danger" })
-               </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
-                *@
-}
-
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <button type="submit" class="btn btn-primary m-t-15 waves-effect">CRIAR</button>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @{
+        Html.RenderAction("ListProduto", "GrupoAcesso");
+    }
 </section>
 
 @*

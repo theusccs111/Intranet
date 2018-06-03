@@ -190,11 +190,13 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\IProduto.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\GrupoAcesso.cs" />
     <Compile Include="Models\GrupoAcessoDAL.cs" />
     <Compile Include="Models\IGrupoAcesso.cs" />
     <Compile Include="Models\IUsuario.cs" />
+    <Compile Include="Models\ProdutoDAL.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -3932,6 +3934,7 @@
     <Content Include="Views\GrupoAcesso\Delete.cshtml" />
     <Content Include="Views\GrupoAcesso\_List.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Produto\_ListProduto.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
