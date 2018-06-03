@@ -16,6 +16,7 @@ namespace Intranet.Controllers
         public ActionResult Index()
         {
 
+
             return View();
         }
         [HttpPost]
