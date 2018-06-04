@@ -15,7 +15,7 @@
                 @Html.AntiForgeryToken()
                 <div class="col-md-3">
 
-                    <select class="form-control show-tick" id="IdUsuario" name="IdUsuario" @*onchange="carrega_ListGruposFiltroUsuario();"*@>
+                    <select class="form-control show-tick" id="IdUsuario" name="IdUsuario" onchange="carrega_ListGruposFiltroUsuario();">
                         <option value="9999">Selecione</option>
                         @if (ViewBag.ListaUsuarios != null)
                         {

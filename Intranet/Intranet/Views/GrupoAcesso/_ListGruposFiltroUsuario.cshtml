@@ -1,6 +1,6 @@
 ﻿
 
-@model IEnumerable<Intranet.Models.UsuarioAcesso>
+@model IEnumerable<Intranet.Models.GrupoAcesso>
 
 
 <div class="container-fluid">
@@ -43,14 +43,14 @@
                                 {
                                     <tr>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.IdGrupoAcesso)
+                                            @Html.DisplayFor(modelItem => item.id)
                                         </td>
                                         <td>
-                                            @Html.DisplayFor(modelItem => item.grupo.descricao)
+                                            @Html.DisplayFor(modelItem => item.descricao)
                                         </td>
                                         <td>
 
-                                            <button type="button" class="btn bg-black waves-effect waves-light" onclick="showCancelMessage(@item.IdGrupoAcesso,@item.IdUsuario);">
+                                            <button type="button" class="btn bg-black waves-effect waves-light" @*onclick="showCancelMessage(@item.id);"*@>
                                                 <i class="material-icons">delete</i>
                                             </button>
 
@@ -73,7 +73,7 @@
 
 
 <script type="text/javascript">
-    function DeleteItem(IdGrupoAcesso, IdUsuario) {
+    @*function DeleteItem(IdGrupoAcesso, IdUsuario) {
                 var url = "@Url.Action("DeleteUsuarioAcesso", "GrupoAcesso")";
 
         var data = { IdGrupoAcesso: IdGrupoAcesso, IdUsuario: IdUsuario };
@@ -89,7 +89,7 @@
 
                 function msgErroAjax(err) {
                     console.log(err.responseText);
-                }
+                }*@
 
 
 </script>

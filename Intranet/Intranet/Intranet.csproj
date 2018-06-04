@@ -3946,7 +3946,6 @@
     <Content Include="Views\GrupoAcesso\AtribuirGrupos.cshtml" />
     <Content Include="Views\Shared\_LayoutInterno.cshtml" />
     <Content Include="Views\GrupoAcesso\_ListGruposFiltroUsuario.cshtml" />
-    <Content Include="Views\GrupoAcesso\AtribuirGrupos2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

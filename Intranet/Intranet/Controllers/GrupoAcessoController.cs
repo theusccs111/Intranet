@@ -39,9 +39,26 @@ namespace Intranet.Controllers
 
         public ActionResult ListGruposFiltroUsuario(int? Id)
         {
-            var list = dal.All()//.Where(x => x.IdUsuario == Id)
-                ;
-            return PartialView("_ListGruposFiltroUsuario", list);
+            
+            
+              var  result = (
+                    // instance from context
+                    from a in conn.GrupoAcesso
+                        // instance from navigation property
+                    from b in a.usuarios
+                        //join to bring useful data
+                    join c in conn.Usuario on b.id equals c.id
+                    where a.id == Id
+                    select new
+                    {
+                        ID = a.id,
+                        Name = a.descricao
+                    }).ToList();
+
+            //var r = dal.All().Where(x => x.usuarios.Where(z => z.id == Id) );
+
+           
+            return PartialView("_ListGruposFiltroUsuario", result);
         }
 
         [HttpPost]
@@ -102,9 +119,22 @@ namespace Intranet.Controllers
         [HttpPost]
         public JsonResult DeleteUsuarioAcesso(int IdGrupoAcesso, int IdUsuario)
         {
-            /*UsuarioAcesso g = dal2.Find(IdUsuario,IdGrupoAcesso);
-            dal2.Delete(g);
-            */return Json(new { success = true });
+            /*
+
+            // return one instance each entity by primary key
+		var product = conn.Product.FirstOrDefault(p => p.ProductID == productID);
+		var supplier = conn.Supplier.FirstOrDefault(s => s.SupplierID == supplierID);
+
+		// call Remove method from navigation property for any instance
+		// supplier.Product.Remove(product);
+		// also works
+		product.Supplier.Remove(supplier);
+
+		// call SaveChanges from context
+		conn.SaveChanges();
+
+            */
+            return Json(new { success = true });
         }
 
 
