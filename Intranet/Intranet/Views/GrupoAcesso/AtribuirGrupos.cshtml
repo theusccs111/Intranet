@@ -10,46 +10,86 @@
     </h2>
     <div class="body">
         <div class="row clearfix">
-            <div class="col-md-3">
+            @using (Html.BeginForm("AtribuirGrupos", "GrupoAcesso", FormMethod.Post, new { id = "create_grupo_acesso" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="col-md-3">
 
-                <select class="form-control show-tick">
-                    <option value="9999">Selecione</option>
-                    @if (ViewBag.ListaUsuarios != null)
-                    {
-                        foreach (var item in ViewBag.ListaUsuarios)
+                    <select class="form-control show-tick" id="IdUsuario" name="IdUsuario" @*onchange="carrega_ListGruposFiltroUsuario();"*@>
+                        <option value="9999">Selecione</option>
+                        @if (ViewBag.ListaUsuarios != null)
                         {
-                            if (item.Text != null)
+                            foreach (var item in ViewBag.ListaUsuarios)
                             {
-                                <option value="@item.Value">
-                                    @item.Text
-                                </option>
+                                if (item.Text != null)
+                                {
+                                    <option value="@item.Value">
+                                        @item.Text
+                                    </option>
+                                }
                             }
                         }
-                    }
-                </select>
-            </div>
-            <div class="col-md-3">
-
-                <select class="form-control show-tick">
-                    <option value="9999">Selecione</option>
-                    @if (ViewBag.ListaGrupos != null)
-                    {
-                        foreach (var item in ViewBag.ListaGrupos)
+                    </select>
+                </div>
+                <div class="col-md-3">
+                     
+                    <select class="form-control show-tick" id="IdGrupoAcesso" name="IdGrupoAcesso">
+                        <option value="9999">Selecione</option>
+                        @if (ViewBag.ListaGrupos != null)
                         {
-                            if (item.Text != null)
+                            foreach (var item in ViewBag.ListaGrupos)
                             {
-                                <option value="@item.Value">
-                                    @item.Text
-                                </option>
+                                if (item.Text != null)
+                                {
+                                    <option value="@item.Value">
+                                        @item.Text
+                                    </option>
+                                }
                             }
                         }
-                    }
-                </select>
-            </div>
+                    </select>
+                </div>
+
+                <button type="submit">Criar</button>
+            }
         </div>
 
         @*colocar render action ao selecionar o usuario mostrando uma lista com seus grupos de acessos via ajax*@
-
+        <div class="ListGruposFiltroUsuario"></div>
     </div>
 </div>
+
+
+<script>
+
+
+
+
+                function msgErroAjax(err) {
+                    console.log(err.responseText);
+                }
+
+    function carrega_ListGruposFiltroUsuario() {
+
+
+
+
+        var usuario = $('#usuarios').val();
+
+         var url = "@Url.Action("ListGruposFiltroUsuario", "GrupoAcesso")";
+
+        var data = { id: usuario };
+
+                    $.post(url, data).done(function (data) {
+                        $('.ListGruposFiltroUsuario').html(data);
+                    }).fail(msgErroAjax).always(function () {
+
+
+                    });
+    }
+
+
+
+
+</script>
 

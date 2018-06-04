@@ -1,0 +1,96 @@
+﻿
+
+@model IEnumerable<Intranet.Models.UsuarioAcesso>
+
+
+<div class="container-fluid">
+
+
+    <!-- Exportable Table -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Grupos
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Descrição</th>                                    
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.IdGrupoAcesso)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.grupo.descricao)
+                                        </td>
+                                        <td>
+
+                                            <button type="button" class="btn bg-black waves-effect waves-light" onclick="showCancelMessage(@item.IdGrupoAcesso,@item.IdUsuario);">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+
+                                            @*data-type="cancel"*@
+                                        </td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- #END# Exportable Table -->
+
+
+
+<script type="text/javascript">
+    function DeleteItem(IdGrupoAcesso, IdUsuario) {
+                var url = "@Url.Action("DeleteUsuarioAcesso", "GrupoAcesso")";
+
+        var data = { IdGrupoAcesso: IdGrupoAcesso, IdUsuario: IdUsuario };
+
+                    $.post(url, data).done(function (data) {
+                        //alert(data.success);
+                    }).fail(msgErroAjax).always(function () {
+
+
+                    });
+                }
+
+
+                function msgErroAjax(err) {
+                    console.log(err.responseText);
+                }
+
+
+</script>
+

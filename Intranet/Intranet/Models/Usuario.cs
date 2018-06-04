@@ -9,6 +9,7 @@ namespace Intranet.Models
 {
     public class Usuario
     {
+      
         [Key]
         public int id { get; set; }
 
@@ -28,6 +29,13 @@ namespace Intranet.Models
 
         [DisplayName("Telefone")]
         public string telefone { get; set; }
+
+        public virtual ICollection<GrupoAcesso> grupos { get; set; }
+
+        public Usuario()
+        {
+            this.grupos = new HashSet<GrupoAcesso>();
+        }
 
     }
 }

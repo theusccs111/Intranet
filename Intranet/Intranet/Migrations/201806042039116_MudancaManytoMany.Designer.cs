@@ -7,13 +7,13 @@ namespace Intranet.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ManytoManyUsuarioGrupo : IMigrationMetadata
+    public sealed partial class MudancaManytoMany : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ManytoManyUsuarioGrupo));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MudancaManytoMany));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806040123364_ManytoManyUsuarioGrupo"; }
+            get { return "201806042039116_MudancaManytoMany"; }
         }
         
         string IMigrationMetadata.Source

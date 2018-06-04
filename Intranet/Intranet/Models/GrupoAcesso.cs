@@ -20,11 +20,11 @@ namespace Intranet.Models
         public bool isAtivo { get; set; }
 
 
-        public ICollection<UsuarioAcesso> UsuarioAcessos { get; set; }
+        public virtual ICollection<Usuario> usuarios { get; set; }
 
         public GrupoAcesso()
         {
-            UsuarioAcessos = new Collection<UsuarioAcesso>();
+            this.usuarios = new HashSet<Usuario>();
         }
     }
 }

@@ -11,12 +11,13 @@ namespace Intranet.Controllers
     public class GrupoAcessoController : Controller
     {
         GrupoAcessoDAL dal = new GrupoAcessoDAL();
+        //UsuarioAcessoDAL dal2 = new UsuarioAcessoDAL();
+
+        Context conn = new Context();
 
         // GET: GrupoAcesso
         public ActionResult Index()
         {
-
-
             return View();
         }
         [HttpPost]
@@ -29,10 +30,18 @@ namespace Intranet.Controllers
             return View(u);
         }
 
+
         public ActionResult ListGrupos()
         {
             var list = dal.All();
             return PartialView("_List",list);
+        }
+
+        public ActionResult ListGruposFiltroUsuario(int? Id)
+        {
+            var list = dal.All()//.Where(x => x.IdUsuario == Id)
+                ;
+            return PartialView("_ListGruposFiltroUsuario", list);
         }
 
         [HttpPost]
@@ -80,18 +89,22 @@ namespace Intranet.Controllers
         }
 
 
-       /* public ActionResult List()
-        {
-            return View(dal.All());
-        }*/
-
-
         [HttpPost]
         public JsonResult DeleteGrupo(int id)
         {
             GrupoAcesso g = dal.Find(id);
             dal.Delete(g);
             return Json(new { success = true });
+        }
+
+
+       
+        [HttpPost]
+        public JsonResult DeleteUsuarioAcesso(int IdGrupoAcesso, int IdUsuario)
+        {
+            /*UsuarioAcesso g = dal2.Find(IdUsuario,IdGrupoAcesso);
+            dal2.Delete(g);
+            */return Json(new { success = true });
         }
 
 
@@ -112,6 +125,36 @@ namespace Intranet.Controllers
                 }
 
             }
+
+            return View();
+        }
+
+
+        [HttpPost]
+        public ActionResult AtribuirGrupos(int IdGrupoAcesso,int IdUsuario)
+        {
+
+            // 1
+            Usuario p = new Usuario { id = IdUsuario };
+            // 2
+            conn.Usuario.Add(p);
+            // 3
+            conn.Usuario.Attach(p);
+
+            // 1
+            GrupoAcesso s = new GrupoAcesso { id = IdGrupoAcesso };
+            // 2
+            conn.GrupoAcesso.Add(s);
+            // 3
+            conn.GrupoAcesso.Attach(s);
+
+            // like previous method add instance to navigation property
+            p.grupos.Add(s);
+
+            // call SaveChanges
+            conn.SaveChanges();
+
+
 
             return View();
         }
