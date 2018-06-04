@@ -16,7 +16,8 @@ namespace Intranet.Models
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
-    {
-    }
+        {
+            modelBuilder.Entity<UsuarioAcesso>().HasKey(x => new { x.IdGrupoAcesso, x.IdUsuario });
+        }
 }
 }

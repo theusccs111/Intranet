@@ -188,6 +188,10 @@
     <Compile Include="Migrations\201806031822407_mudanca.Designer.cs">
       <DependentUpon>201806031822407_mudanca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806040123364_ManytoManyUsuarioGrupo.cs" />
+    <Compile Include="Migrations\201806040123364_ManytoManyUsuarioGrupo.Designer.cs">
+      <DependentUpon>201806040123364_ManytoManyUsuarioGrupo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\IProduto.cs" />
@@ -198,6 +202,7 @@
     <Compile Include="Models\IUsuario.cs" />
     <Compile Include="Models\ProdutoDAL.cs" />
     <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Models\UsuarioAcesso.cs" />
     <Compile Include="Models\UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -3940,6 +3945,7 @@
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Views\Produto\_ListProduto.cshtml" />
     <Content Include="Views\GrupoAcesso\AtribuirGrupos.cshtml" />
+    <Content Include="Views\Shared\_LayoutInterno.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3979,6 +3985,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806031822407_mudanca.resx">
       <DependentUpon>201806031822407_mudanca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806040123364_ManytoManyUsuarioGrupo.resx">
+      <DependentUpon>201806040123364_ManytoManyUsuarioGrupo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

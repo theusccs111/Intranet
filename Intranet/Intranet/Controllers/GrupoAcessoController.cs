@@ -80,10 +80,10 @@ namespace Intranet.Controllers
         }
 
 
-        public ActionResult List()
+       /* public ActionResult List()
         {
             return View(dal.All());
-        }
+        }*/
 
 
         [HttpPost]
@@ -104,6 +104,13 @@ namespace Intranet.Controllers
                 {
                     ViewBag.ListaGrupos = result.Select(x => new SelectListItem { Text = x.descricao, Value = x.id.ToString() });
                 }
+
+                var result2 = (from g in c.Usuario select g).ToList();
+                if (result2 != null)
+                {
+                    ViewBag.ListaUsuarios = result2.Select(x => new SelectListItem { Text = x.login, Value = x.id.ToString() });
+                }
+
             }
 
             return View();
