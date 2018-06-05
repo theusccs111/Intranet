@@ -39,10 +39,6 @@ namespace Intranet.Controllers
 
         public ActionResult ListGruposFiltroUsuario(int? usuario)
         {
-
-
-
-
             var list = dal.AllUsuario(usuario);
 
 

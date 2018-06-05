@@ -10,7 +10,7 @@ namespace Intranet.Models
         public Context()
             : base("name=Context")
         {
-            this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.LazyLoadingEnabled = true;
         }
 
         public DbSet<Usuario> Usuario { get; set; }

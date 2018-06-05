@@ -30,11 +30,11 @@ namespace Intranet.Models
             {
                 using (var context = new Context())
                 {
-                    // return 
+                    
 
                     Usuario u = context.Usuario.Find(Id);
 
-                    // contem a lista de cursos do professor 1
+                    // contem a lista de grupos do usuario Id
                    return u.grupos.ToList();
                 }
             }
