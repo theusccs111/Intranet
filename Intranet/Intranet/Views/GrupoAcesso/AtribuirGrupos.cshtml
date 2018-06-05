@@ -74,14 +74,14 @@
 
 
 
-        var usuario = $('#usuarios').val();
+        var usuario = $('#IdUsuario').val();
 
          var url = "@Url.Action("ListGruposFiltroUsuario", "GrupoAcesso")";
 
-        var data = { id: usuario };
+        var data = { usuario: usuario };
 
                     $.post(url, data).done(function (data) {
-                        $('.ListGruposFiltroUsuario').html(data);
+                        //$('.ListGruposFiltroUsuario').html(data);
                     }).fail(msgErroAjax).always(function () {
 
 

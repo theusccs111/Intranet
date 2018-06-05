@@ -37,28 +37,16 @@ namespace Intranet.Controllers
             return PartialView("_List",list);
         }
 
-        public ActionResult ListGruposFiltroUsuario(int? Id)
+        public ActionResult ListGruposFiltroUsuario(int? usuario)
         {
-            
-            
-              var  result = (
-                    // instance from context
-                    from a in conn.GrupoAcesso
-                        // instance from navigation property
-                    from b in a.usuarios
-                        //join to bring useful data
-                    join c in conn.Usuario on b.id equals c.id
-                    where a.id == Id
-                    select new
-                    {
-                        ID = a.id,
-                        Name = a.descricao
-                    }).ToList();
 
-            //var r = dal.All().Where(x => x.usuarios.Where(z => z.id == Id) );
 
-           
-            return PartialView("_ListGruposFiltroUsuario", result);
+
+
+            var list = dal.AllUsuario(usuario);
+
+
+            return PartialView("_ListGruposFiltroUsuario", list);
         }
 
         [HttpPost]

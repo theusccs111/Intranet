@@ -9,6 +9,7 @@ namespace Intranet.Models
     public interface IGrupoAcesso
     {
         IEnumerable<GrupoAcesso> All();
+        IEnumerable<GrupoAcesso> AllUsuario(int? Id);
         GrupoAcesso Find(int? id);
         void Insert(GrupoAcesso grupo);
         void Update(GrupoAcesso grupo);

@@ -24,6 +24,27 @@ namespace Intranet.Models
             
         }
 
+        public IEnumerable<GrupoAcesso> AllUsuario(int? Id)
+        {
+            try
+            {
+                using (var context = new Context())
+                {
+                    // return 
+
+                    Usuario u = context.Usuario.Find(Id);
+
+                    // contem a lista de cursos do professor 1
+                   return u.grupos.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         public GrupoAcesso Find(int? codigo)
         {
             using (var context = new Context())

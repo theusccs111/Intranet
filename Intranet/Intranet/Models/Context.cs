@@ -9,7 +9,9 @@ namespace Intranet.Models
     {
         public Context()
             : base("name=Context")
-        { }
+        {
+            this.Configuration.LazyLoadingEnabled = false;
+        }
 
         public DbSet<Usuario> Usuario { get; set; }
         public DbSet<GrupoAcesso> GrupoAcesso { get; set; }
@@ -21,5 +23,5 @@ namespace Intranet.Models
         {
             //modelBuilder.Entity<UsuarioAcesso>().HasKey(x => new { x.IdGrupoAcesso, x.IdUsuario });
         }
-}
+    }
 }
