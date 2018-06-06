@@ -11,50 +11,51 @@
     <div class="body">
         <div class="row clearfix">
             @using (Html.BeginForm("AtribuirGrupos", "GrupoAcesso", FormMethod.Post, new { id = "create_grupo_acesso" }))
-            {
-                @Html.AntiForgeryToken()
-                <div class="col-md-3">
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-md-3">
 
-                    <select class="form-control show-tick" id="IdUsuario" name="IdUsuario" onchange="carrega_ListGruposFiltroUsuario();">
-                        <option value="9999">Selecione</option>
-                        @if (ViewBag.ListaUsuarios != null)
+                <select class="form-control show-tick" id="IdUsuario" name="IdUsuario" onchange="carrega_ListGruposFiltroUsuario();">
+                    <option value="9999">Selecione</option>
+                    @if (ViewBag.ListaUsuarios != null)
+                {
+                    foreach (var item in ViewBag.ListaUsuarios)
+                    {
+                        if (item.Text != null)
                         {
-                            foreach (var item in ViewBag.ListaUsuarios)
-                            {
-                                if (item.Text != null)
-                                {
-                                    <option value="@item.Value">
-                                        @item.Text
-                                    </option>
-                                }
-                            }
-                        }
-                    </select>
-                </div>
-                <div class="col-md-3">
-                     
-                    <select class="form-control show-tick" id="IdGrupoAcesso" name="IdGrupoAcesso">
-                        <option value="9999">Selecione</option>
-                        @if (ViewBag.ListaGrupos != null)
-                        {
-                            foreach (var item in ViewBag.ListaGrupos)
-                            {
-                                if (item.Text != null)
-                                {
-                                    <option value="@item.Value">
-                                        @item.Text
-                                    </option>
-                                }
-                            }
-                        }
-                    </select>
-                </div>
-
-                <button type="submit">Criar</button>
+                            <option value="@item.Value">
+                                @item.Text
+                            </option>
+                    }
+                }
             }
-        </div>
+                </select>
+            </div>
+            <div class="col-md-3">
 
-        @*colocar render action ao selecionar o usuario mostrando uma lista com seus grupos de acessos via ajax*@
+                <select class="form-control show-tick" id="IdGrupoAcesso" name="IdGrupoAcesso">
+                    <option value="9999">Selecione</option>
+                    @if (ViewBag.ListaGrupos != null)
+                {
+                    foreach (var item in ViewBag.ListaGrupos)
+                    {
+                        if (item.Text != null)
+                        {
+                            <option value="@item.Value">
+                                @item.Text
+                            </option>
+                    }
+                }
+            }
+                </select>
+            </div>
+
+            <button type="submit">Criar</button>
+    }
+
+
+
+        </div>
         <div class="ListGruposFiltroUsuario"></div>
     </div>
 </div>
@@ -62,22 +63,10 @@
 
 <script>
 
-
-
-
-                function msgErroAjax(err) {
-                    console.log(err.responseText);
-                }
-
     function carrega_ListGruposFiltroUsuario() {
 
-
-
-
         var usuario = $('#IdUsuario').val();
-
-         var url = "@Url.Action("ListGruposFiltroUsuario", "GrupoAcesso")";
-
+        var url = "@Url.Action("ListGruposFiltroUsuario", "GrupoAcesso")";
         var data = { usuario: usuario };
 
                     $.post(url, data).done(function (data) {
@@ -87,9 +76,5 @@
 
                     });
     }
-
-
-
-
 </script>
 

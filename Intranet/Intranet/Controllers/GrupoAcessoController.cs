@@ -103,21 +103,21 @@ namespace Intranet.Controllers
         [HttpPost]
         public JsonResult DeleteUsuarioAcesso(int IdGrupoAcesso, int IdUsuario)
         {
-            /*
+            
 
             // return one instance each entity by primary key
-		var product = conn.Product.FirstOrDefault(p => p.ProductID == productID);
-		var supplier = conn.Supplier.FirstOrDefault(s => s.SupplierID == supplierID);
+		var usuario = conn.Usuario.FirstOrDefault(p => p.id == IdUsuario);
+		var grupo = conn.GrupoAcesso.FirstOrDefault(s => s.id == IdGrupoAcesso);
 
 		// call Remove method from navigation property for any instance
 		// supplier.Product.Remove(product);
 		// also works
-		product.Supplier.Remove(supplier);
+		usuario.grupos.Remove(grupo);
 
 		// call SaveChanges from context
 		conn.SaveChanges();
 
-            */
+           
             return Json(new { success = true });
         }
 
@@ -170,7 +170,7 @@ namespace Intranet.Controllers
 
 
 
-            return View();
+            return RedirectToAction("AtribuirGrupos", "GrupoAcesso");
         }
 
     }

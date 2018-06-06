@@ -148,6 +148,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ChamadosController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\GrupoAcessoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -193,6 +194,7 @@
       <DependentUpon>201806042039116_MudancaManytoMany.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Chamado.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\IProduto.cs" />
     <Compile Include="Models\Produto.cs" />
@@ -3949,6 +3951,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Chamados\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

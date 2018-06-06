@@ -1,5 +1,9 @@
 ﻿
 
+function msgErroAjax(err) {
+    console.log(err.responseText);
+}
+
 $(function () {
     $('.js-sweetalert button').on('click', function () {
         console.log('veio aqui');
