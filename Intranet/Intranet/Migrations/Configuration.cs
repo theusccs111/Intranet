@@ -28,7 +28,7 @@ namespace Intranet.Migrations
             //    );
             //
 
-            
+
 
             context.GrupoAcesso.AddOrUpdate(x => x.id,
        new GrupoAcesso() { id = 1, descricao = "administrador", isAtivo = true }
@@ -45,6 +45,17 @@ namespace Intranet.Migrations
        new Usuario() { id = 2, login = "teste", senha = "451278", grupos = { context.GrupoAcesso.Find(2) } }
        );
 
+            context.Produto.AddOrUpdate(x => x.Id,
+                     new Produto() { Id = 1, DescProduto = "Chave", isAtivo = true,DataCompra = new DateTime(2018,1,1),DataVencimento = new DateTime(2018,1,1),Peso = 1,Quantidade = 1,Valor = 1}
+           );
+
+            context.Produto.AddOrUpdate(x => x.Id,
+                new Produto() { Id = 2, DescProduto = "Mesa", isAtivo = true, DataCompra = new DateTime(2018, 1, 1), DataVencimento = new DateTime(2018, 1, 1), Peso = 1, Quantidade = 1, Valor = 1 }
+            );
+
+            context.Produto.AddOrUpdate(x => x.Id,
+                new Produto() { Id = 3, DescProduto = "Cadeira", isAtivo = true, DataCompra = new DateTime(2018, 1, 1), DataVencimento = new DateTime(2018, 1, 1), Peso = 1, Quantidade = 1, Valor = 1 }
+            );
 
 
         }

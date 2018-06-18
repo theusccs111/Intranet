@@ -10,37 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
-    <!-- Bootstrap Core Css -->
-    <link href="~/Content/bootstrap.css" rel="stylesheet">
-    <!-- Waves Effect Css -->
-    <link href="~/Content/waves.css" rel="stylesheet" />
-    <!-- Animation Css -->
-    <link href="~/Content/animate.css" rel="stylesheet" />
-
-
-    <!-- Multi Select Css -->
-    <link href="~/Content/multi-select.css" rel="stylesheet">
-
-    <!-- Animation Css -->
-    <link href="~/Content/sweetalert.css" rel="stylesheet" />
-
-    <!-- Bootstrap Material Datetime Picker Css -->
-    <link href="~/Content/bootstrap-material-datetimepicker.css" rel="stylesheet" />
-    <link href="~/Content/waitMe.css" rel="stylesheet" />
-    <link href="~/Content/bootstrap-select.css" rel="stylesheet" />
-    <link href="~/Content/dataTables.bootstrap.css" rel="stylesheet" />
-    <!--  Morris Chart Css -->
-    <link href="~/Content/morris.css" rel="stylesheet">
-    <!-- Custom Css -->
-    <link href="~/Content/style.css" rel="stylesheet">
-    <!-- Themes Css -->
-    <link href="~/Content/all-themes.css" rel="stylesheet">
-
-
-
-
+    @Styles.Render("~/Content/css")
 </head>
-<body class="theme-black">
+<body class="theme-black" ng-app="produtos">
 
 
     <!-- Page Loader -->
@@ -510,71 +482,13 @@
     @RenderBody()
 
 
-    <!-- Jquery Core Js -->
-    <script src="~/Scripts/jquery.min.js"></script>
-    <!-- Bootstrap Core Js -->
-    <script src="~/Scripts/bootstrap.js"></script>
-
-    <!-- Select Plugin Js -->
-    <script src="~/Scripts/bootstrap-select.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="~/Scripts/jquery.slimscroll.js"></script>
-
-    <!-- Multi Select Plugin Js -->
-    <script src="~/Scripts/jquery.multi-select.js"></script>
-    <!-- Waves Effect Plugin Js -->
-    <script src="~/Scripts/waves.js"></script>
 
 
-    <script src="~/Scripts/sweetalert.min.js"></script>
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/bsbAdmin")
 
 
-    <script src="~/Scripts/jquery.dataTables.js"></script>
-    <script src="~/Scripts/dataTables.bootstrap.js"></script>
-    <script src="~/Scripts/dataTables.buttons.min.js"></script>
-    <script src="~/Scripts/buttons.flash.min.js"></script>
-    <script src="~/Scripts/jszip.min.js"></script>
-    <script src="~/Scripts/pdfmake.min.js"></script>
-    <script src="~/Scripts/vfs_fonts.js"></script>
-    <script src="~/Scripts/buttons.html5.min.js"></script>
-    <script src="~/Scripts/buttons.print.min.js"></script>
-
-    <script src="~/Scripts/autosize.js"></script>
-    <script src="~/Scripts/moment.js"></script>
-
-    <script src="~/Scripts/bootstrap-material-datetimepicker.js"></script>
-    <!-- Jquery CountTo Plugin Js -->
-    <script src="~/Scripts/jquery.countTo.js"></script>
-    <!-- Morris Plugin Js -->
-    <script src="~/Scripts/raphael.min.js"></script>
-    <script src="~/Scripts/morris.js"></script>
-    <!-- ChartJs -->
-    <script src="~/Scripts/Chart.bundle.js"></script>
-    <!-- Flot Charts Plugin Js -->
-    <script src="~/Scripts/jquery.flot.js"></script>
-    <script src="~/Scripts/jquery.flot.resize.js"></script>
-    <script src="~/Scripts/jquery.flot.pie.js"></script>
-    <script src="~/Scripts/jquery.flot.categories.js"></script>
-    <script src="~/Scripts/jquery.flot.time.js"></script>
-    <!-- Sparkline Chart Plugin Js -->
-    <script src="~/Scripts/jquery.sparkline.js"></script>
-    <!-- Custom Js -->
-    <script src="~/Scripts/admin.js"></script>
-    <script src="~/Scripts/index.js"></script>
-    <script src="~/Scripts/basic-form-elements.js"></script>
-    <script src="~/Scripts/advanced-form-elements.js"></script>
-    <script src="~/Scripts/jquery-datatable.js"></script>
-
-    <!-- Demo Js -->
-    <script src="~/Scripts/demo.js"></script>
-
-
-
-
-    <!-- Bootstrap Notify Plugin Js -->
-    <script src="~/Scripts/bootstrap-notify.js"></script>
-
-    <script src="~/Scripts/FuncoesCriadas.js"></script>
 </body>
 </html>

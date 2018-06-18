@@ -208,6 +208,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AngularJSAPP\Produto\Controller.js" />
+    <Content Include="AngularJSAPP\Produto\Module.js" />
+    <Content Include="AngularJSAPP\Produto\Service.js" />
     <Content Include="Content\all-themes.css" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -3612,6 +3615,9 @@
     </Content>
     <Content Include="Scripts\admin.js" />
     <Content Include="Scripts\advanced-form-elements.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\autosize.js" />
     <Content Include="Scripts\basic-form-elements.js" />
     <Content Include="Scripts\bootstrap-material-datetimepicker.js" />
@@ -3853,6 +3859,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\forgot-password.js" />
     <Content Include="Scripts\FuncoesCriadas.js" />

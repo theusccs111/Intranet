@@ -11,14 +11,25 @@ namespace Intranet.Controllers
     {
         ProdutoDAL dal = new ProdutoDAL();
         // GET: Produto
+       
+        public JsonResult GetProdutos()
+        {
+            return Json(dal.All(), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult AddProduto(Produto p)
+        { 
+            dal.Insert(p);
+            return Json(new {sucess = true});
+        }
+        
         public ActionResult Index()
         {
             return View();
         }
 
-
-
-        [HttpPost]
+        /*[HttpPost]
         public ActionResult Index(Produto u)
         {
             if (ModelState.IsValid) //verifica se é válido
@@ -26,13 +37,15 @@ namespace Intranet.Controllers
                 dal.Insert(u);
             }
             return View(u);
-        }
+        }*/
 
         public ActionResult ListProduto()
         {
             var list = dal.All();
-            return PartialView("_List", list);
+            return PartialView("_ListProduto", list);
         }
+
+
 
     }
 }

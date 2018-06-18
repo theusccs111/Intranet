@@ -1,63 +1,61 @@
-﻿@model IEnumerable<Intranet.Models.Produto>
+﻿
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.DescProduto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Peso)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Valor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Quantidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataCompra)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataVencimento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.isAtivo)
-        </th>
-        <th></th>
-    </tr>
+<div class="container-fluid" >
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DescProduto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Peso)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Valor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Quantidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataCompra)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataVencimento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.isAtivo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
 
-</table>
+    <!-- Exportable Table -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        Produtos
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover dataTable js-exportable" id="tableProdutos">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Produto</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr ng-repeat="prod in Produtos">
+                                <td>{{prod.Id}}</td>
+                                <td>{{prod.DescProduto}}</td>
+                                <td>
+                                    <a href="#" class="btn btn-info">Atualizar</a>
+                                    <a href="#" class="btn-danger">Excluir</a>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- #END# Exportable Table -->
+
+
+
+
